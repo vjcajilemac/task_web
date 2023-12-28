@@ -1,0 +1,26 @@
+.task_list__container{
+    background-color: brown;
+}
+.task__container{
+    display: flex;
+    flex-direction: row;
+    height: 70px;
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: #F5F9FA;
+    border-radius: 0.7rem;
+    
+}
+.task__status__circle{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+.task_info__header{
+    height: 40%;
+}
+.task_info__observation{
+    height: 60%;
+}

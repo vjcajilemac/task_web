@@ -1,0 +1,14 @@
+.task_content__container{
+    margin: 2%;
+    height: 90%;
+
+}
+.task_content__tittle{
+    display: flex;
+    direction: row;
+    align-items: center;
+    color: white;
+}
+.task_content__tittle h1{
+    color: white;
+}
