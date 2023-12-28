@@ -8,7 +8,7 @@ import './TaskPage.css'
 
 const TaskPage = () => {
   const taskArrayData: TaskInterface[] =[
-    {id:1, name:"Crear Componentes", due_date:"18/12/2023", observation:"", status:{name:"cumplido", color:"blue"}},
+    {id:1, name:"Crear Componentes", due_date:"18/12/2023", observation:"saldlaskdlsakaaaaaaaaaaaaaaaaaaaa", status:{name:"cumplido", color:"blue"}},
     {id:2, name:"Crear Backend", due_date:"18/12/2023", observation:"", status:{name:"activo", color:"green"}}];
     useEffect(() => {
       Hello()
