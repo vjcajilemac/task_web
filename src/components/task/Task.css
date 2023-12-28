@@ -20,10 +20,10 @@
 }
 
 .task_info__header{
-    height: 50%;
+    height: 45%;
 }
 .task_info__observation{
-    height: 50%;
+    height: 45%;
     max-width: 100%;
     text-overflow: ellipsis;
     overflow: hidden;

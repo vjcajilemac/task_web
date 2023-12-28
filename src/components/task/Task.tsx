@@ -35,7 +35,7 @@ const Task = ({taskItem}:any) => {
 
         
       </div>
-      <div className='h-100 d-flex row col-8 justify-content-start align-items-between '>
+      <div className='h-100 d-flex row col-8 justify-content-start align-items-center '>
         <div className='task_info__header d-flex row w-100 p-0 m-0 '>
           <h4>{taskItem.name}, {taskItem.due_date}</h4>
         </div>

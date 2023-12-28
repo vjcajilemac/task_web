@@ -18,7 +18,7 @@ const TaskPage = () => {
         console.log('asd')
     }
   return (
-    <TaskLayout>
+    <TaskLayout taskList = {taskArrayData}>
       <div className='task_content__container'>
         <div className='task_content__tittle'>
         <FontAwesomeIcon icon={faList} /><h1>Tareas</h1>

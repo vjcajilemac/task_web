@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Header, SideBar } from '../components';
 import './TaskLayout.css'
-const TaskLayout = ({children}:any) => {
+const TaskLayout = ({children, taskList}:any) => {
 
   const [anchoVentana, setAnchoVentana] = useState(window.innerWidth);
 
@@ -9,6 +9,7 @@ const TaskLayout = ({children}:any) => {
     const manejarCambioTamaño = () => {
       setAnchoVentana(window.innerWidth);
     };
+    console.log('taskList', taskList)
 
     // Agregar un event listener para rastrear cambios en el tamaño de la ventana
     window.addEventListener('resize', manejarCambioTamaño);
@@ -27,7 +28,7 @@ const TaskLayout = ({children}:any) => {
       <div className='body_container  col-12'>
         {anchoVentana>600&&(
         <div className='sidebar_container container-fluid col-0 col-sm-2 col-md-4 col-lg-4'>
-         <SideBar/>
+         <SideBar taskList = {taskList}/>
         </div>
         )}
 
