@@ -2,15 +2,17 @@
     width:90%;
     margin: 2%;
     height: 85%;
+    max-height: 85%;
     margin: 0;
-
 }
+
 .task_content__tittle{
     display: flex;
     direction: row;
     align-items: center;
     color: white;
 }
+
 .task_content__tittle h1{
     color: white;
 }

@@ -1,7 +1,6 @@
 import { useEffect } from "react"
-import { TaskInterface } from "../../interfaces/Task"
 
-const SideBar = ({taskList}:any) => {
+const SideBar = ({taskList}) => {
   useEffect(() => {
     console.log(taskList, "taskList")
     
@@ -15,7 +14,7 @@ const SideBar = ({taskList}:any) => {
                 <h3>Lista de Tareas</h3>
                 <ol>
                   {taskList&&taskList.length>0?(
-                    taskList.map((task:TaskInterface)=>(
+                    taskList.map((task)=>(
                       <li style={{color:"black"}} key={task.id}>{task.name}</li>
                     ))
                   ):(<>No s eha encontrado valores</>)}

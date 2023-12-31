@@ -11,7 +11,7 @@
     align-items: center;
     background-color: #F5F9FA;
     border-radius: 0.7rem;
-    
+    overflow-y: auto;
 }
 .task__status__circle{
     border-radius: 50%;
@@ -20,11 +20,15 @@
 }
 
 .task_info__header{
-    height: 45%;
+    height: 35%;
+    margin: 0;
+    padding: 0;
 }
 .task_info__observation{
     height: 45%;
     max-width: 100%;
+    margin: 0;
+    padding: 0;
     text-overflow: ellipsis;
     overflow: hidden;
 }
