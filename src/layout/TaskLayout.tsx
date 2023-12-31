@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Header, SideBar } from '../components';
 import './TaskLayout.css'
-const TaskLayout = ({children, taskList}:any) => {
+const TaskLayout = ({children, taskList, searchString, handlerSearchString}:any) => {
 
   const [anchoVentana, setAnchoVentana] = useState(window.innerWidth);
 
@@ -23,7 +23,7 @@ const TaskLayout = ({children, taskList}:any) => {
   return (
     <div className='layout'>
       <nav className='header_container'>
-      <Header/>
+      <Header searchString={searchString} handlerSearchString={handlerSearchString}/>
       </nav>
       <div className='body_container  col-12'>
         {anchoVentana>600&&(

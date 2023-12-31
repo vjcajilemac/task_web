@@ -8,24 +8,41 @@ import './TaskPage.css'
 import { ApiGet } from '../../helpers/apiHelpers'
 
 const TaskPage = () => {
+  
   const [state, setState] = useState({
-    tasks:[]
+    tasks:[],
+    searchString:"",
+    
   })
-  const {tasks} = state;
-  const taskArrayData: TaskInterface[] =[
-    {id:1, name:"Crear Componentes", due_date:"18/12/2023", observation:"saldlaskdlsakaaaaaaaaaaaaaaaaaaaa", status:{name:"cumplido", color:"blue"}},
-    {id:2, name:"Crear Backend", due_date:"18/12/2023", observation:"", status:{name:"activo", color:"green"}}];
+  const {tasks, searchString} = state;
+  
     useEffect(() => {
       initData()
     }, [])
-    
+
+    useEffect(() => {
+      // Use setTimeout to update the message after 2000 milliseconds (2 seconds)
+      
+      const timeout = setTimeout(() => {
+        initData();
+      }, 2000);
+      console.log()
+      // Cleanup function to clear the timeout if the component unmounts
+      return () => clearTimeout(timeout);
+    },  [searchString])
+
+    const handlerSearchString = (ev:any) =>{
+      
+      setState({...state, searchString: ev.target.value});
+
+    }
     const initData = async () =>{
-      const dataResponse = await ApiGet('tasks');
+      const dataResponse = await ApiGet(`tasks?searchString=${searchString}`);
       setState({...state, tasks: dataResponse});
       console.log("response", dataResponse)
     }
   return (
-    <TaskLayout taskList = {tasks}>
+    <TaskLayout taskList = {tasks} handlerSearchString={handlerSearchString} searchString={searchString}>
       <div className='task_content__container'>
         <div className='task_content__tittle'>
         <FontAwesomeIcon icon={faList} /><h1>Tareas</h1>

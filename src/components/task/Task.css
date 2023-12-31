@@ -20,11 +20,15 @@
 }
 
 .task_info__header{
-    height: 45%;
+    height: 35%;
+    margin: 0;
+    padding: 0;
 }
 .task_info__observation{
     height: 45%;
     max-width: 100%;
+    margin: 0;
+    padding: 0;
     text-overflow: ellipsis;
     overflow: hidden;
 }
