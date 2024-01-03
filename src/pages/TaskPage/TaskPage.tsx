@@ -17,13 +17,13 @@ const TaskPage = () => {
     currentComponent : "list"
     
   })
-  const {tasks, searchString, currentComponent} = state;
+  const {searchString, currentComponent} = state;
   const {getTasks}:any = useTask();
 
   const initData = async () =>{  
     const dataResponse = await getTasks(searchString);
     setState({...state, tasks: dataResponse});
-    console.log("response", dataResponse)
+    
   }
   useEffect(() => {
     initData()
@@ -67,7 +67,7 @@ const TaskPage = () => {
         {currentComponent==="list"?(
         <TaskList taskList = {appContextInstance.tasks}></TaskList>
         ):(
-          <NewTask></NewTask>
+          <NewTask handleChangeComponent={handleChangeComponent}></NewTask>
         )}
 
       </div>

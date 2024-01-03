@@ -2,7 +2,7 @@
 import { CreateTaskDto } from "../../dto/CreateTaskDto";
 import { useForm } from "../../hooks/useForm"
 import { useTask } from "../../composables/useTask";
-const NewTask = () => {
+const NewTask = ({handleChangeComponent}:any) => {
     const {createTask} = useTask(); 
     const [ formTaskValues, handleInputChange, handleChangeDate ] = useForm({
         name:"",
@@ -15,8 +15,8 @@ const NewTask = () => {
     const handleOnSubmit=(event:any)=>{
         event.preventDefault();
         createTask({name:name, date:date,observation})
+        handleChangeComponent("list")
         
-
     }
     return (
     <form onSubmit={handleOnSubmit} className="col-12 col-md-6">
