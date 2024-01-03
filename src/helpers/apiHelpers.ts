@@ -25,6 +25,26 @@ const ApiPost = async (url_endpoint: string, data: Object) => {
 
   return resp;
 };
+const ApiDelete = async (url_endpoint: string) => {
+  const resp = await TaskApiConfig.delete(`api/${url_endpoint}`).then((response)=>{return response.data}).catch(
+    (error) => {
+      handleError(error);
+      return [];
+    }
+  );
+
+  return resp;
+};
+const ApiPatch = async (url_endpoint: string) => {
+  const resp = await TaskApiConfig.patch(`api/${url_endpoint}`).then((response)=>{return response.data}).catch(
+    (error) => {
+      handleError(error);
+      return [];
+    }
+  );
+
+  return resp;
+};
 
 const handleError = (error: any) => {
 
@@ -55,4 +75,4 @@ const handleResponse = (resp: any) => {
   return resp.data;
 };
 
-export { ApiGet, ApiPost};
+export { ApiGet, ApiPost, ApiDelete, ApiPatch};

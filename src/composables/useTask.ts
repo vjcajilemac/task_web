@@ -1,4 +1,4 @@
-import { ApiGet, ApiPost } from "../helpers/apiHelpers";
+import { ApiDelete, ApiGet, ApiPatch, ApiPost } from "../helpers/apiHelpers";
 import { AppContext } from "../context/AppContext";
 import { useContext } from 'react';
 import { CreateTaskDto } from "../dto/CreateTaskDto";
@@ -23,9 +23,23 @@ const useTask = () => {
 
   };
 
+  const deleteTask = async (taskId:number)=>{
+    const respTask = await ApiDelete(`tasks/${taskId}`);
+    getTasks()
+    return respTask
+  }
+
+  const completeTask = async (taskId:number) =>{
+    const respTask = await ApiPatch(`tasks/${taskId}`);
+    getTasks()
+    return respTask
+  }
+
   return {
+    completeTask,
     getTasks,
-    createTask
+    createTask,
+    deleteTask
   };
 };
 
