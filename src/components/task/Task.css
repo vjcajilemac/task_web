@@ -11,6 +11,7 @@
     align-items: center;
     background-color: #F5F9FA;
     border-radius: 0.7rem;
+    cursor: pointer;
     overflow-y: auto;
 }
 .task__status__circle{
