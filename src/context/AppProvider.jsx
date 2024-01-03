@@ -1,51 +1,45 @@
 import { useReducer } from 'react';
 import { AppContext } from './AppContext';
 import { appReducer } from './appReducer';
+import { appTypes } from './types/appTypes';
 
-import { appTypes } from '../types/types';
-
-// const initialState = {
-//     logged: false,
-// }
+const initialState = {
+     tasks: [],
+}
 
 const init = () => {
-  const user = JSON.parse( localStorage.getItem('user') );
 
   return {
-    logged: !!user,
-    user: user,
+    tasks: [],
   }
 }
 
 
-export const AuthProvider = ({ children }) => {
+export const AppProvider = ({ children }) => {
     
-  const [ authState, dispatch ] = useReducer( appReducer, {}, init );
+  const [ appState, dispatch ] = useReducer( appReducer, initialState, init );
 
-  const login = ( name = '' ) => {
-
-    const user = { id: 'ABC', name }
-    const action = { type: appTypes.login, payload: user }
-
-    localStorage.setItem('user', JSON.stringify( user ) );
-
+  const setTasksContext = ( taskArray = [] ) => {
+    const action = { type: appTypes.setTasks, payload: taskArray }
     dispatch(action);
+    
   }
 
-  const logout = () => {
-    localStorage.removeItem('user');
-    const action = { type: appTypes.logout };
+  const getTasksContext = ( ) => {
+    const action = { type: appTypes.getTasks }
+    console.log("get task action", action)
     dispatch(action);
+
   }
 
 
   return (
     <AppContext.Provider value={{
-      ...authState,
-
+      ...appState,
       // Methods
-      login,
-      logout,
+      setTasksContext,
+      getTasksContext
+
     }}>
         { children }
     </AppContext.Provider>

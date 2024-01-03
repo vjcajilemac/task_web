@@ -1,16 +1,21 @@
-import { types } from '../types/types';
+import { appTypes } from './types/appTypes';
 
-export const authReducer = ( state = {}, action ) => {
+export const appReducer = ( state = {}, action ) => {
 
 
     switch ( action.type ) {
 
-        case types.login:
+        case appTypes.setTasks:
+            console.log('Settasks app reducer', action.payload )
             return {
                 ...state,
-                logged: true,
-                user: action.payload
+                tasks: action.payload
             };
+        case appTypes.getTasks:
+            
+            return {
+                tasks: state.tasks,
+            }
 
     
         default:

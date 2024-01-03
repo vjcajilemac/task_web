@@ -1,4 +1,4 @@
 export const appTypes = {
-    getTask:  '[Task] get',
-
+    getTasks:  '[Tasks] get',
+    setTasks:  '[Tasks] set',
 }

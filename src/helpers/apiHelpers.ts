@@ -16,7 +16,7 @@ const ApiGet = async (url_endpoint: string) => {
 
 
 const ApiPost = async (url_endpoint: string, data: Object) => {
-  const resp = await TaskApiConfig.post(`${url_endpoint}`, data).then((response)=>{return response.data}).catch(
+  const resp = await TaskApiConfig.post(`api/${url_endpoint}`, data).then((response)=>{return response.data}).catch(
     (error) => {
       handleError(error);
       return [];
