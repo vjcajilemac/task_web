@@ -8,3 +8,15 @@
 - List task with search
 - Complete the taks
 - Delete task
+
+
+## 1.1.0 (03 Enero 2024)
+
+- Auth Layout config
+- Auth Router config
+- Composables auth
+- Register user
+- GUI register
+- GUI login
+- Conncect login and and register user APIS
+- Guards and protected routers
