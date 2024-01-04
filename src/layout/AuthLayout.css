@@ -1,0 +1,24 @@
+/*Main Structure*/
+.auth_layout{
+    position: relative;
+    min-width: 100%;
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    background-color: #013459;
+  }
+
+.auth___container{
+    display: flex;
+    flex-direction: row;
+    height: 90%;
+    width: 100%;
+    min-width: 100%;
+}
+
+.image_container{
+  background-image: url('../resources//images//image_background_tasks.jpg');
+}

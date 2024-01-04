@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const config = localStorage.token
+const config = localStorage.getItem('token')
   ? {
       baseURL: process.env.REACT_APP_BASE_API_URL,
       headers: {
-        Authorization: `Bearer ${JSON.parse(localStorage.token)}`,
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
     }
   : {
@@ -15,3 +15,4 @@ const config = localStorage.token
 const TaskApiConfig = axios.create(config);
 
 export default TaskApiConfig;
+//        Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}`,
